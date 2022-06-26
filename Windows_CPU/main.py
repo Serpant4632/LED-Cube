@@ -8,7 +8,7 @@ import time
 coreLoad = [0, 0, 0, 0, 0, 0, 0, 0]
 temperature = 0
 
-TARGET_IP = "192.168.0.193"
+TARGET_IP = "XXX.XXX.XXX.XXX"
 TARGET_PORT = 1233
 
 

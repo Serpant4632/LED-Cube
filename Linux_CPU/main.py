@@ -2,7 +2,7 @@ import psutil
 import socekt
 import time
 
-TARGET_IP = "192.168.0.193"
+TARGET_IP = "XXX.XXX.XXX.XXX"
 TARGET_PORT = 1234
 
 while True:

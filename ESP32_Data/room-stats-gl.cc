@@ -37,9 +37,9 @@
 #define CORES 1
 
 //Temperature thresholds for cool (blue), medium (green/yellow) and hot (red)
-#define T1 10.0 //Do not omit the decimal point. This will be used in the OpenGL shader which will otherwise interpret it as a float literal
-#define T2 20.0
-#define T3 30.0
+#define T1 15.0 //Do not omit the decimal point. This will be used in the OpenGL shader which will otherwise interpret it as a float literal
+#define T2 25.0
+#define T3 35.0
 
 //That's it up here, but you might also want to change the settings for your RGB matrix in line 462 below
 
@@ -515,15 +515,19 @@ int main(int argc, char *argv[]) {
     defaults.led_rgb_sequence = "RGB";
     defaults.pwm_bits = 8;
     defaults.pwm_lsb_nanoseconds = 150;
-    defaults.panel_type = "FM6126A";
+    defaults.limit_refresh_rate_hz = 120;
+    // defaults.panel_type = "FM6126A";
+    // defaults.panel_type = "FM6124";
+    // defaults.panel_type = "ICN2038S";
+    // defaults.panel_type = "ICN2037";
     defaults.rows = 64;
     defaults.cols = 192;
     defaults.chain_length = 1;
     defaults.parallel = 1;
-    //defaults.brightness = 60;
+    //defaults.brightness = 60
 
     runtime.drop_privileges = 0;
-    runtime.gpio_slowdown = 1;
+    runtime.gpio_slowdown = 2;
     RGBMatrix *matrix = rgb_matrix::CreateMatrixFromFlags(&argc, &argv, &defaults, &runtime);
     if (matrix == NULL)
         return EXIT_FAILURE;

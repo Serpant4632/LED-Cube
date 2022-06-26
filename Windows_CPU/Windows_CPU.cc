@@ -515,7 +515,11 @@ int main(int argc, char *argv[]) {
     defaults.led_rgb_sequence = "RGB";
     defaults.pwm_bits = 8;
     defaults.pwm_lsb_nanoseconds = 150;
-    defaults.panel_type = "FM6126A";
+    defaults.limit_refresh_rate_hz = 120;
+    // defaults.panel_type = "FM6126A";
+    // defaults.panel_type = "FM6124";
+    // defaults.panel_type = "ICN2038S";
+    // defaults.panel_type = "ICN2037";
     defaults.rows = 64;
     defaults.cols = 192;
     defaults.chain_length = 1;
@@ -523,7 +527,7 @@ int main(int argc, char *argv[]) {
     //defaults.brightness = 60;
 
     runtime.drop_privileges = 0;
-    runtime.gpio_slowdown = 1;
+    runtime.gpio_slowdown = 2;
     RGBMatrix *matrix = rgb_matrix::CreateMatrixFromFlags(&argc, &argv, &defaults, &runtime);
     if (matrix == NULL)
         return EXIT_FAILURE;

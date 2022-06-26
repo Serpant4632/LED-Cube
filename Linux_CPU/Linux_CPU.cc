@@ -509,18 +509,22 @@ int main(int argc, char *argv[]) {
                           (void *)0);
 
     //LED Matrix settings
-    RGBMatrix::Options defaults;
+     RGBMatrix::Options defaults;
     rgb_matrix::RuntimeOptions runtime;
     defaults.hardware_mapping = "adafruit-hat-pwm";
     defaults.led_rgb_sequence = "RGB";
     defaults.pwm_bits = 8;
     defaults.pwm_lsb_nanoseconds = 150;
-    defaults.panel_type = "FM6126A";
+    defaults.limit_refresh_rate_hz = 120;
+    // defaults.panel_type = "FM6126A";
+    // defaults.panel_type = "FM6124";
+    // defaults.panel_type = "ICN2038S";
+    // defaults.panel_type = "ICN2037";
     defaults.rows = 64;
     defaults.cols = 192;
     defaults.chain_length = 1;
     defaults.parallel = 1;
-    //defaults.brightness = 60;
+    //defaults.brightness = 60
 
     runtime.drop_privileges = 0;
     runtime.gpio_slowdown = 1;

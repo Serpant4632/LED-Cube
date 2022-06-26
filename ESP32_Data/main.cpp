@@ -11,18 +11,18 @@
 
 #define I2C_ADDRESS 0x76
 
+// make objects from classes and activates I2C
+Adafruit_BMP280 bmp;
+WiFiUDP udp;
+
 // predeclaration Error function
 String nan_Error(String);
 
-const char* ssid = "2.4 GHz";
-const char* wifiPwd = "KirscheBananeErdbeere1";
+const char* ssid = "YOUR_WIFI_SSID";
+const char* wifiPwd = "YOUR_WIFI_PWD";
 
 const char* udpAddress = "192.168.0.193";
 const int udpPort = 1235;
-
-// make objects from classes
-Adafruit_BMP280 bmp;
-WiFiUDP udp;
 
 
 void setup() {
@@ -55,7 +55,7 @@ void loop() {
   udp.print(temperature);
   udp.endPacket();
   Serial.println(bmp.readTemperature(),2);
-  delay(2500);
+  delay(10000);
   }
 
 String nan_Error(String check){
