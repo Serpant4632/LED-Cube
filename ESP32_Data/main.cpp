@@ -21,7 +21,7 @@ String nan_Error(String);
 const char* ssid = "YOUR_WIFI_SSID";
 const char* wifiPwd = "YOUR_WIFI_PWD";
 
-const char* udpAddress = "192.168.0.193";
+const char* udpAddress = "XXX.XXX.XXX.XXX";
 const int udpPort = 1235;
 
 
